@@ -1,3 +1,5 @@
+#include<iostream>
+
 class Date {
 public:
  Date(int month=1, int day=1,int annee=1);
