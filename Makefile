@@ -9,3 +9,4 @@ tp1.o: tp1.cpp
 
 clean:
 	rm -f *.o all
+al
