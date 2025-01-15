@@ -22,7 +22,7 @@ int getDaysInMonth(int month) {
 }
 
 // Constructeur de Date avec validation
-Date::Date(int month, int day, int annee) {
+date::date(int month, int day, int annee) {
     if (isDate(month, day, annee)) {
         _month = month;
         _day = day;
@@ -36,12 +36,12 @@ Date::Date(int month, int day, int annee) {
 }
 
 // Accesseurs
-int Date::month() const { return _month; }
-int Date::day() const { return _day; }
-int Date::annee() const { return _annee; }
+int date::month() const { return _month; }
+int date::day() const { return _day; }
+int date::annee() const { return _annee; }
 
 // Mutateurs
-void Date::updateMonth(int month) {
+void date::updateMonth(int month) {
     if (month >= 1 && month <= 12) {
         _month = month;
     } else {
@@ -49,7 +49,7 @@ void Date::updateMonth(int month) {
     }
 }
 
-void Date::updateDay(int day) {
+void date::updateDay(int day) {
     if (day >= 1 && day <= getDaysInMonth(_month)) {
         _day = day;
     } else {
@@ -57,12 +57,12 @@ void Date::updateDay(int day) {
     }
 }
 
-void Date::updateAnnee(int annee) {
+void date::updateAnnee(int annee) {
     _annee = annee;
 }
 
 // Avancer d'un jour
-void Date::next() {
+void date::next() {
     _day++;
     if (_day > getDaysInMonth(_month)) {
         _day = 1;
@@ -75,7 +75,7 @@ void Date::next() {
 }
 
 // Reculer d'un jour
-void Date::back() {
+void date::back() {
     _day--;
     if (_day < 1) {
         _month--;
@@ -88,14 +88,14 @@ void Date::back() {
 }
 
 // Convertir la date en string
-std::string toString(Date d) {
+std::string toString(date d) {
     std::ostringstream oss;
     oss << d.day() << "/" << d.month() << "/" << d.annee();
     return oss.str();
 }
 
 // Calcul du jour de l'année
-int dayOfYear(Date d) {
+int dayOfYear(date d) {
     int totalDays = d.day();
     for (int i = 1; i < d.month(); i++) {
         totalDays += getDaysInMonth(i);

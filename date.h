@@ -1,8 +1,8 @@
 #include<iostream>
 
-class Date {
+class date {
 public:
- Date(int month=1, int day=1,int annee=1);
+ date(int month=1, int day=1,int annee=1);
  int month() const;
  int day() const;
  int annee() const;
@@ -18,5 +18,5 @@ private:
 };
 bool isDate(int month, int day,int annee);
 int getDaysInMonth(int month);
-int dayOfYear(Date d);
-std::string toString(Date d);
+int dayOfYear(date d);
+std::string toString(date d);

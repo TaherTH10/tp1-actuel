@@ -1,11 +1,13 @@
 #include<iostream>
-#include<livre.h>
- livre::livre(std::string t,std::string a,std::string l,std::string g,std::string d,int ISBN ): a(_auteur) , t(_titre),l(_langue);g(_genre),d(_datepu),ISBN(_ISBN) {} 
+#include"livre.h"
+
+ livre::livre(std::string t,std::string a,std::string l,std::string g,date d,int ISBN ): _auteur(a) , _titre(t),_langue(l),_genre(g),_datepu(d),_ISBN(ISBN) {} 
  std::string livre::titre() const{return _titre;}
  std::string livre::auteur() const {return _auteur;}
- std::string livre::langue() const {return _langue}
+ std::string livre::langue() const {return _langue;}
  std::string livre::genre() const {return _genre;}
- int livre::ISBN(){return _ISBN;}
+ date livre::datep() const {return _datepu; }
+ int livre::ISBN() const {return _ISBN;}
  void livre::settitre(std::string titre){
     _titre=titre;
  }
@@ -18,7 +20,7 @@
  void livre::setgenre(std::string genre){
     _genre=genre;
  }
- void livre::setdatep(std::string datep){
+ void livre::setdatep(date datep){
     _datepu=datep;
  }
  int livre::setISBN(int ISBN){
