@@ -8,7 +8,7 @@ private:
     std::string _datepu;
     int _ISBN;
 public:
-    livre(std::string t,std::string a,std::string l,std::string g,std::string,int ISBN );
+    livre(std::string t,std::string a,std::string l,std::string g,std::string d,int ISBN );
     std::string titre() const;
     std::string auteur() const;
     std::string langue() const;
